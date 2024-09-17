@@ -1,0 +1,34 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "853a3d098e2011fe6290126485d6c3ce"
+name = "InsightPilot"
+handle = "insightpilot"
+application_url = "https://accessed-carried-lap-message.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "htm-dev-store.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,read_orders,read_customers,read_inventory,read_analytics,read_shop,read_collections"
+
+
+[auth]
+redirect_urls = [
+  "https://accessed-carried-lap-message.trycloudflare.com/auth/callback",
+  "https://accessed-carried-lap-message.trycloudflare.com/auth/shopify/callback",
+  "https://accessed-carried-lap-message.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
